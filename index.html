@@ -147,8 +147,8 @@
   <section class="screen" id="s-form">
     <div class="body">
       <div>
-        <h1>Curious about astrology?</h1>
-        <p class="lede">A few quick questions — takes less than a minute.</p>
+        <h1>Let's find your reading</h1>
+        <p class="lede">A few quick questions first — takes less than a minute.</p>
         <div class="steps" aria-hidden="true">
           <div class="steps-track" id="steps"><i></i><i></i><i></i></div>
           <span class="steps-label" id="stepsLabel">0 of 3</span>
@@ -182,8 +182,8 @@
   <section class="screen" id="s-done">
     <div class="done">
       <div class="seal"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <h1>You're on the list</h1>
-      <p class="lede">A few of you will get early access to a pass. We'll be in touch.</p>
+      <h1>Your reading is being written ✨</h1>
+      <p class="lede">We'll notify you the moment it's ready.</p>
     </div>
   </section>
 
@@ -365,13 +365,13 @@ const PRIOR_EXPERIENCE_OPTS = [
   {id:'neither',              name:'Neither',                 icon:'dash',    desc:'This would be a first for you'}
 ];
 const EXCLUSIVE_IDS = ['neither'];
-// "A personalised reading" and "Talk about something specific" read as
-// redundant without these -- a reading is general, a specific ask is about
-// one topic. The descriptions carry that distinction, not just the title.
+// "A personalised reading" and "Something specific" read as redundant
+// without these -- a reading is general, a specific ask is about one topic.
+// The descriptions carry that distinction, not just the title.
 const INTEREST_OPTS = [
-  {id:'personalized_reading', name:'A personalised reading',        icon:'reading', desc:'A reading about your life, written just for you'},
-  {id:'specific_topic',       name:'Talk about something specific', icon:'compass', desc:'Love, career, money — whatever\'s on your mind'},
-  {id:'first_chat_free',      name:'Free first chat',               icon:'gift',    desc:'No cost, no commitment, just to try it out'}
+  {id:'personalized_reading', name:'A personalised reading', icon:'reading', desc:'A reading about your life, written just for you'},
+  {id:'specific_topic',       name:'Something specific',     icon:'compass', desc:'Love, career, money — whatever\'s on your mind'},
+  {id:'first_chat_free',      name:'Free first chat',        icon:'gift',    desc:'No cost, no commitment, just to try it out'}
 ];
 
 const CHECK_SVG = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
@@ -416,7 +416,7 @@ function render(){
   // Q1 and Q2 are both required now; Q3 stays optional.
   const bothRequiredDone = !!answers.q1 && priorExperience.length > 0;
   submitBtn.disabled = !bothRequiredDone;
-  submitLabel.textContent = bothRequiredDone ? 'Continue' : 'Answer the questions above';
+  submitLabel.textContent = bothRequiredDone ? 'Reveal My Reading' : 'Answer the questions above';
 
   if (!noteEl.classList.contains('warn')) noteEl.textContent = '';
 }
